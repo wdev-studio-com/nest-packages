@@ -44,13 +44,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wdev-studio/nest-auth.git",
+    "url": "git+https://github.com/wdev-studio-com/nest-packages.git",
     "directory": "packages/nest-auth"
   },
   "bugs": {
-    "url": "https://github.com/wdev-studio/nest-auth/issues"
+    "url": "https://github.com/wdev-studio-com/nest-packages/issues"
   },
-  "homepage": "https://github.com/wdev-studio/nest-auth/tree/main/packages/nest-auth",
+  "homepage": "https://github.com/wdev-studio-com/nest-packages/tree/main/packages/nest-auth",
   "keywords": [
     "nest",
     "nestjs",

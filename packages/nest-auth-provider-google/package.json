@@ -34,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wdev-studio/nest-auth.git",
+    "url": "git+https://github.com/wdev-studio-com/nest-packages.git",
     "directory": "packages/nest-auth-provider-google"
   },
   "bugs": {
-    "url": "https://github.com/wdev-studio/nest-auth/issues"
+    "url": "https://github.com/wdev-studio-com/nest-packages/issues"
   },
-  "homepage": "https://github.com/wdev-studio/nest-auth/tree/main/packages/nest-auth-provider-google",
+  "homepage": "https://github.com/wdev-studio-com/nest-packages/tree/main/packages/nest-auth-provider-google",
   "keywords": [
     "nest",
     "nestjs",
