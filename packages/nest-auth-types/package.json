@@ -1,6 +1,6 @@
 {
   "name": "@wdev-studio/nest-auth-types",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared contracts, interfaces and types for @wdev-studio/nest-auth ecosystem",
   "license": "MIT",
   "author": "Wdev Studio",

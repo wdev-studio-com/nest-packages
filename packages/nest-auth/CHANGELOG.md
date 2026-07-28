@@ -1,5 +1,13 @@
 # @wdev-studio/nest-auth
 
+## 0.1.1
+
+### Patch Changes
+
+- fix: correct repository URLs to wdev-studio-com/nest-packages
+- Updated dependencies
+  - @wdev-studio/nest-auth-types@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

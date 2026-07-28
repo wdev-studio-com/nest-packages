@@ -1,6 +1,6 @@
 {
   "name": "@wdev-studio/nest-auth-provider-github",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GitHub OAuth 2.0 provider for @wdev-studio/nest-auth",
   "license": "MIT",
   "author": "Wdev Studio",

@@ -1,6 +1,6 @@
 {
   "name": "@wdev-studio/nest-auth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Core authentication engine for NestJS - AuthModule, OAuth Manager, JWT, Session, Guards",
   "license": "MIT",
   "author": "Wdev Studio",
