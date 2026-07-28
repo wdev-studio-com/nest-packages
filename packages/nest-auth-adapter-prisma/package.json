@@ -1,0 +1,64 @@
+{
+  "name": "@wdev-studio/nest-auth-adapter-prisma",
+  "version": "0.1.0",
+  "description": "Prisma database adapter for @wdev-studio/nest-auth ecosystem",
+  "license": "MIT",
+  "author": "Wdev Studio",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "prisma",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@wdev-studio/nest-auth-types": "workspace:*",
+    "@prisma/client": "^5.14.0"
+  },
+  "peerDependencies": {
+    "@prisma/client": ">=5.0.0",
+    "typescript": ">=5.4.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdev-studio/nest-auth.git",
+    "directory": "packages/nest-auth-adapter-prisma"
+  },
+  "bugs": {
+    "url": "https://github.com/wdev-studio/nest-auth/issues"
+  },
+  "homepage": "https://github.com/wdev-studio/nest-auth/tree/main/packages/nest-auth-adapter-prisma",
+  "keywords": [
+    "nest",
+    "nestjs",
+    "auth",
+    "prisma",
+    "orm",
+    "database",
+    "adapter",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

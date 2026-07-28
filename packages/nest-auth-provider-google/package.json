@@ -1,0 +1,58 @@
+{
+  "name": "@wdev-studio/nest-auth-provider-google",
+  "version": "0.1.0",
+  "description": "Google OAuth 2.0 + OpenID Connect provider for @wdev-studio/nest-auth",
+  "license": "MIT",
+  "author": "Wdev Studio",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@wdev-studio/nest-auth-types": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdev-studio/nest-auth.git",
+    "directory": "packages/nest-auth-provider-google"
+  },
+  "bugs": {
+    "url": "https://github.com/wdev-studio/nest-auth/issues"
+  },
+  "homepage": "https://github.com/wdev-studio/nest-auth/tree/main/packages/nest-auth-provider-google",
+  "keywords": [
+    "nest",
+    "nestjs",
+    "auth",
+    "google",
+    "oauth",
+    "openid",
+    "oidc",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  name          String?
+  picture       String?
+  locale        String?
+  emailVerified Boolean   @default(false)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime?
+
+  accounts      Account[]
+  sessions      Session[]
+  refreshTokens RefreshToken[]
+  loginHistory  LoginHistory[]
+}
+
+model Account {
+  id                String   @id @default(uuid())
+  userId            String
+  provider          String
+  providerAccountId String
+  accessToken       String?
+  refreshToken      String?
+  idToken           String?
+  scope             String[]
+  tokenType         String?
+  expiresAt         DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id                String   @id @default(uuid())
+  userId            String
+  provider          String
+  ip                String?
+  userAgent         String?
+  deviceFingerprint String?
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  expiresAt         DateTime
+  lastActivityAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isActive])
+}
+
+model RefreshToken {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  family    String?
+  isRevoked Boolean   @default(false)
+  revokedAt DateTime?
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([tokenHash])
+  @@index([userId])
+  @@index([family])
+}
+
+model OAuthState {
+  id                  String   @id @default(uuid())
+  state               String   @unique
+  provider            String
+  codeChallenge       String?
+  codeChallengeMethod String?
+  redirectUri         String?
+  expiresAt           DateTime
+  createdAt           DateTime @default(now())
+
+  @@index([state])
+}
+
+model OAuthNonce {
+  id        String   @id @default(uuid())
+  nonce     String   @unique
+  provider  String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([nonce])
+}
+
+model LoginHistory {
+  id                String   @id @default(uuid())
+  userId            String
+  provider          String
+  ip                String?
+  userAgent         String?
+  deviceFingerprint String?
+  success           Boolean
+  failureReason     String?
+  createdAt         DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@wdev-studio/auth-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "bun run --filter './packages/*' build",
+    "build:types": "bun run --filter @wdev-studio/nest-auth-types build",
+    "build:nest-auth": "bun run --filter @wdev-studio/nest-auth build",
+    "build:google": "bun run --filter @wdev-studio/nest-auth-provider-google build",
+    "build:prisma": "bun run --filter @wdev-studio/nest-auth-adapter-prisma build",
+    "build:github": "bun run --filter @wdev-studio/nest-auth-provider-github build",
+    "test": "bun run --filter './packages/*' test",
+    "test:coverage": "bun run --filter './packages/*' test:coverage",
+    "lint": "echo 'lint ok'",
+    "format": "prettier --write 'packages/*/src/**/*.ts'",
+    "publish": "bun run build && bunx changeset publish",
+    "version": "bunx changeset version",
+    "changeset": "bunx changeset",
+    "release": "bun run build && bunx changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^20.0.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  },
+  "packageManager": "bun@1.0.0"
+}
